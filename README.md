@@ -39,6 +39,14 @@ root/
     └── angular.json
 ```
 
+## Clonar el repositorio
+
+```bash
+git clone https://github.com/Jesus-Gonzalez-Arroyo/contacts-app-manager
+cd contact-manager-app
+code .
+```
+
 ## 🚀 Ejecutar con docker
 
 ### 1. Requisitos
@@ -46,14 +54,7 @@ root/
 - Docker
 - Docker Compose
 
-### 2. Clona el repositorio
-
-```bash
-git clone https://github.com/Jesus-Gonzalez-Arroyo/contacts-app-manager
-cd contact-manager-app
-```
-
-### 3. Levantar el backend
+### 2. Levantar el backend
 
 ```bash
 cd backend
@@ -64,7 +65,7 @@ Esto levantará:
 
 - Backend [http://localhost:3000/api/contacts](http://localhost:3000/api/contacts)
 
-### 4. Levantar el frontend
+### 3. Levantar el frontend
 
 ```bash
 cd frontend
