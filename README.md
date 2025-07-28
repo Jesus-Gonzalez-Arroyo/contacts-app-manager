@@ -6,7 +6,7 @@ Aplicación fullstack para la gestión de contactos. Permite crear, editar, list
 
 ```bash
 git clone https://github.com/Jesus-Gonzalez-Arroyo/contacts-app-manager
-cd contact-manager-app
+cd contacts-app-manager
 code .
 ```
 
