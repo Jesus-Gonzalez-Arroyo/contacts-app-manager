@@ -2,43 +2,6 @@
 
 Aplicación fullstack para la gestión de contactos. Permite crear, editar, listar y eliminar contactos a través de una interfaz amigable en Angular y una API RESTful en Node.js/Express.
 
-## 🧩 Tecnologías utilizadas
-
-### Frontend
-- Angular
-- TypeScript
-- Bootstrap
-
-### Backend
-- Node.js
-- Express.js
-- MongoDB (como base de datos)
-
-## 📁 Estructura del proyecto
-
-```
-root/
-│
-├── backend/
-│   ├── src/
-│   │   ├── config/         # Hace la conexion con la base de datos
-│   │   ├── controllers/    # Logica principal HTTP
-│   │   ├── models/         # Esquemas de Mongoose (Contact)
-│   │   ├── routes/         # Rutas RESTful (/api/contacts)
-│   │   ├── validations/    # Validacion de los datos del request
-│   │   └── app.js          # App principal de Express
-│   └── package.json
-│
-└── frontend/
-    ├── src/app/
-    │   ├── components/
-    │   │   ├── contact-form/   # Formulario reactivo
-    │   │   └── contact-list/   # Listado y acciones
-    │   ├── services/           # ContactService (HTTP)
-    │   └── interfaces/         # Tipado de Contact y Error
-    └── angular.json
-```
-
 ## Clonar el repositorio
 
 ```bash
@@ -84,6 +47,43 @@ Esto levantará:
 | POST   | `/api/contacts`    | Crear un nuevo contacto       |
 | PUT    | `/api/contacts/:id`| Actualizar contacto existente |
 | DELETE | `/api/contacts/:id`| Eliminar un contacto          |
+
+## 🧩 Tecnologías utilizadas
+
+### Frontend
+- Angular
+- TypeScript
+- Bootstrap
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB (como base de datos)
+
+## 📁 Estructura del proyecto
+
+```
+root/
+│
+├── backend/
+│   ├── src/
+│   │   ├── config/         # Hace la conexion con la base de datos
+│   │   ├── controllers/    # Logica principal HTTP
+│   │   ├── models/         # Esquemas de Mongoose (Contact)
+│   │   ├── routes/         # Rutas RESTful (/api/contacts)
+│   │   ├── validations/    # Validacion de los datos del request
+│   │   └── app.js          # App principal de Express
+│   └── package.json
+│
+└── frontend/
+    ├── src/app/
+    │   ├── components/
+    │   │   ├── contact-form/   # Formulario reactivo
+    │   │   └── contact-list/   # Listado y acciones
+    │   ├── services/           # ContactService (HTTP)
+    │   └── interfaces/         # Tipado de Contact y Error
+    └── angular.json
+```
 
 ## ✅ Funcionalidades
 
