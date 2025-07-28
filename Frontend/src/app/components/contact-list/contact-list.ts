@@ -47,7 +47,6 @@ export class ContactListComponent implements OnInit {
   }
 
   edit(contact: Contact) {
-    console.log('contact', contact)
     this.router.navigate(['/form'], { state: { contact } });
   }
 

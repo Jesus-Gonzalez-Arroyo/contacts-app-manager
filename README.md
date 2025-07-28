@@ -5,14 +5,14 @@ Aplicación fullstack para la gestión de contactos. Permite crear, editar, list
 ## 🧩 Tecnologías utilizadas
 
 ### Frontend
-- [Angular 16+](https://angular.io/)
+- Angular
 - TypeScript
 - Bootstrap
 
 ### Backend
-- [Node.js](https://nodejs.org/)
-- [Express.js](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/) (como base de datos)
+- Node.js
+- Express.js
+- MongoDB (como base de datos)
 
 ## 📁 Estructura del proyecto
 
@@ -39,35 +39,41 @@ root/
     └── angular.json
 ```
 
-## 🚀 Instalación y ejecución
+## 🚀 Ejecutar con docker
 
-### 1. Clona el repositorio
+### 1. Requisitos
+
+- Docker
+- Docker Compose
+
+### 2. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/contact-manager-app.git
+git clone https://github.com/Jesus-Gonzalez-Arroyo/contacts-app-manager
 cd contact-manager-app
 ```
 
-### 2. Backend
+### 3. Levantar el backend
 
 ```bash
 cd backend
-npm install
-npm run dev
+docker-compose up --build
 ```
 
-- Servidor corriendo en `http://localhost:3000`
-- Base de datos: MongoDB Atlas o local
+Esto levantará:
 
-### 3. Frontend
+- Backend [http://localhost:3000/api/contacts](http://localhost:3000/api/contacts)
+
+### 4. Levantar el frontend
 
 ```bash
 cd frontend
-npm install
-npm run dev
+docker-compose up --build
 ```
 
-- Aplicación Angular en `http://localhost:4200`
+Esto levantará:
+
+- Frontend [http://localhost:4200/](http://localhost:4200/)
 
 ## 📬 API Endpoints
 
@@ -86,3 +92,8 @@ npm run dev
 - [x] Búsqueda por nombre
 - [x] Validación de formularios
 - [x] Manejo de errores del servidor
+
+## 🚀 Deploy
+
+- Frontend [https://contacts-app-manager-swart.vercel.app/](https://contacts-app-manager-swart.vercel.app/)
+- Backend [https://contacts-app-manager-1.onrender.com/api/contacts](https://contacts-app-manager-1.onrender.com/api/contacts)

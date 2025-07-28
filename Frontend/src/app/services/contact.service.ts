@@ -9,7 +9,7 @@ import { Contact } from '../interfaces/contact.interface.js'
 
 @Injectable()
 export class ContactService {
-  private api = 'https://contacts-app-manager-1.onrender.com/api/contacts';
+  private api = 'http://localhost:3000/api/contacts';
 
   constructor(private http: HttpClient) {}
 
