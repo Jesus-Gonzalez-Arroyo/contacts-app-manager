@@ -5,6 +5,7 @@ import { Router } from "@angular/router";
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {Contact, Error} from '../../interfaces/contact.interface'
+import swat from 'sweetalert2';
 
 /**
  * @class ContactFormComponent
@@ -47,8 +48,16 @@ export class ContactFormComponent {
     }
   }
 
+  /**
+   * Envía el formulario para crear o actualizar un contacto.
+   * Valida los campos requeridos y maneja la respuesta del servicio.
+   */
+
   onSubmit() {
-    if (!this.form.valid) return;
+    if (!this.form.valid) {
+      this.alert('Error', 'Por favor, completa todos los campos requeridos.');
+      return
+    };
 
     const contact = this.form.value;
 
@@ -65,23 +74,53 @@ export class ContactFormComponent {
     }
   }
 
+  /**
+   * Maneja la respuesta exitosa de la creación o actualización del contacto.
+   * Emite un evento para refrescar la lista de contactos y resetea el formulario
+   */
+
   private handleSuccess() {
     this.refresh.emit();
     this.resetForm();
   }
 
+  /**
+   * valida el error recibido y muestra una alerta con el mensaje de error.
+   * @param error 
+   */
+
   private handleError(error: Error) {
     if (error?.error?.error) {
-      alert(error.error.error);
+      this.alert('Error', error.error.error)
     } else {
-      alert('Ocurrió un error inesperado. Intenta de nuevo.');
+      this.alert('Error', 'Ocurrió un error inesperado. Intenta de nuevo.')
     }
   }
+
+  /**
+   * Resetea el formulario y redirige a la página principal.
+   */
 
   private resetForm() {
     this.form.reset();
     this.isEditing = false;
     this.contactId = null;
     this.router.navigate(['/']);
+  }
+
+  /**
+   * Muestra una alerta con el mensaje y el icono especificado desde donde es llamada.
+   * @param title titulo de la alerta
+   * @param text texto de la alerta
+   * @param icon icon de la alerta, puede ser 'success' o 'error'
+   * @returns una promesa que se resuelve cuando el usuario cierra la alerta
+   */
+
+  private alert(title: string, text: string, icon: 'success' | 'error' = 'error') {
+    return swat.fire({
+      title,
+      icon,
+      text
+    })
   }
 }
